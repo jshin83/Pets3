@@ -17,6 +17,8 @@ $f3 = Base::instance();
 
 $f3->set('DEBUG', 3);
 
+$f3->set('colors', array('pink', 'green', 'blue'));
+
 //define page1 route
 $f3->route('GET /', function() {
     //echo '<h1>This is default</h1>'; //testing purposes
@@ -24,8 +26,7 @@ $f3->route('GET /', function() {
 
    $view = new View();
    echo $view -> render('views/home.html');
-}
-);
+});
 
 //define a new route
 $f3->route('GET /pets/show/@type', function($f3,$params) {
@@ -45,16 +46,14 @@ $f3->route('GET /pets/show/@type', function($f3,$params) {
             echo $view->render('views/home.html');
 
     }
-}
-);
+});
 
 $f3->route('GET /order', function() {
     //echo '<h1>Form 1</h1>'; //testing purposes
 
     $view = new View();
     echo $view -> render('views/order.html');
-}
-);
+});
 
 $f3->route('POST /order2', function($f3)//, $params)  {
 {
@@ -67,8 +66,7 @@ $f3->route('POST /order2', function($f3)//, $params)  {
 
     $view = new View();
     echo $view -> render('views/order2.html');
-}
-);
+});
 
 $f3->route('POST /results', function($f3) {
 
@@ -82,8 +80,12 @@ $f3->route('POST /results', function($f3) {
     echo $view -> render('views/results.html');
 
     //echo '<p>Thank you for ordering a '.$_SESSION['color'].' '.$_SESSION['animal'].'!</p>';
+});
 
-}
-);
+$f3->route('GET|POST /new-pet', function($f3){
+    $view = new Template();
+    echo $view->render('views/new-pet.html');
+});
+
 
 $f3->run();
