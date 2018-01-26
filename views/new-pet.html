@@ -12,15 +12,27 @@
 
     <form action="#" method="POST">
         <label>Pet Name</label>
+        <check if="{{ @errors['name'] }}">
+            <p>{{ @errors['name'] }}</p>
+        </check>
         <input type="text" id="name" name="name">
         <label>Choose Pet Color</label>
+        <check if="{{ @errors['color'] }}">
+            <p>{{ @errors['color'] }}</p>
+        </check>
         <select class="form-control" name="pet-color" id="pet-color">
             <option>--Select--</option>
             <repeat group="{{ @colors }}" value="{{ @colorOption }}">
-                <option>{{ @colorOption }}</option>
+                <option>
+                    <check if="{{ @colorOption == @color }}">selected</check>
+                    {{ @colorOption }}
+                </option>
             </repeat>
         </select>
         <label>Pet Type</label>
+        <check if="{{ @errors['type'] }}">
+            <p>{{ @errors['type'] }}</p>
+        </check>
         <input type="text" id="type" name="type"><br>
         <input type="submit" id="submit" name="submit" value="Submit">
     </form>
