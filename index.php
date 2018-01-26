@@ -82,7 +82,22 @@ $f3->route('POST /results', function($f3) {
     //echo '<p>Thank you for ordering a '.$_SESSION['color'].' '.$_SESSION['animal'].'!</p>';
 });
 
+
+//new pet route
+
 $f3->route('GET|POST /new-pet', function($f3){
+
+    if (isset ($_POST['submit'])) {
+        $color = $_POST['pet-color'];
+        include ('model/validate.php');
+    }
+
+    $f3->set('color, $color');
+    $f3->set('type', $type);
+    $f3->set('name', $name);
+    $f3->set('errors', $errors);
+    $f3->set('success', $success);
+
     $view = new Template();
     echo $view->render('views/new-pet.html');
 });
