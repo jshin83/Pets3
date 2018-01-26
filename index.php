@@ -89,10 +89,14 @@ $f3->route('GET|POST /new-pet', function($f3){
 
     if (isset ($_POST['submit'])) {
         $color = $_POST['pet-color'];
+        $type = $_POST['type'];
+        $name = $_POST['name'];
+        $errors = $_POST['errors'];
+        $success = $_POST['success'];
         include ('model/validate.php');
     }
 
-    $f3->set('color, $color');
+    $f3->set('color', $color);
     $f3->set('type', $type);
     $f3->set('name', $name);
     $f3->set('errors', $errors);
