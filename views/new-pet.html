@@ -15,7 +15,7 @@
         <check if="{{ @errors['name'] }}">
             <p>{{ @errors['name'] }}</p>
         </check>
-        <input type="text" id="name" name="name">
+        <input type="text" id="name" name="name" value="{{ @name }}">
         <label>Choose Pet Color</label>
         <check if="{{ @errors['color'] }}">
             <p>{{ @errors['color'] }}</p>
@@ -33,7 +33,7 @@
         <check if="{{ @errors['type'] }}">
             <p>{{ @errors['type'] }}</p>
         </check>
-        <input type="text" id="type" name="type"><br>
+        <input type="text" id="type" name="type" value="{{ @type }}"><br>
         <input type="submit" id="submit" name="submit" value="Submit">
     </form>
 
