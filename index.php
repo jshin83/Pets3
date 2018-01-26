@@ -93,14 +93,17 @@ $f3->route('GET|POST /new-pet', function($f3){
         $name = $_POST['name'];
         $errors = $_POST['errors'];
         $success = $_POST['success'];
+
         include ('model/validate.php');
+
+        $f3->set('color', $color);
+        $f3->set('type', $type);
+        $f3->set('name', $name);
+        $f3->set('errors', $errors);
+        $f3->set('success', $success);
     }
 
-    $f3->set('color', $color);
-    $f3->set('type', $type);
-    $f3->set('name', $name);
-    $f3->set('errors', $errors);
-    $f3->set('success', $success);
+
 
     $view = new Template();
     echo $view->render('views/new-pet.html');

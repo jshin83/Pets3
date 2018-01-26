@@ -6,8 +6,11 @@
 </head>
 <body>
     <h1>Order a Pet</h1>
+    <check if="{{ @success }}">
+        <h2>Thank you for your order of a {{ @type }}!</h2>
+    </check>
 
-    <form action="POST" method="#">
+    <form action="#" method="POST">
         <label>Pet Name</label>
         <input type="text" id="name" name="name">
         <label>Choose Pet Color</label>
@@ -21,5 +24,6 @@
         <input type="text" id="type" name="type"><br>
         <input type="submit" id="submit" name="submit" value="Submit">
     </form>
+
 </body>
 </html>

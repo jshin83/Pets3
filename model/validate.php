@@ -8,6 +8,7 @@
 
 $errors = array();
 
+
 function validColor($color)
 {
     global $f3;
@@ -24,9 +25,14 @@ if(!validColor($color))
     $errors['color'] = "Please enter a valid color.";
 }
 
-if(!validString($string))
+if(!validString($type))
 {
-    $errors['string'] = "Please enter a valid string.";
+    $errors['type'] = "Please enter a valid string.";
+}
+
+if(!validString($name))
+{
+    $errors['name'] = "Please enter a valid string.";
 }
 
 $success = sizeof($errors) == 0;
