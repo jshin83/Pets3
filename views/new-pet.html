@@ -5,7 +5,10 @@
     <title>New Pet</title>
 </head>
 <body>
+    <h1>Order a Pet</h1>
     <form action="POST" method="#">
+        <label>Pet Name</label>
+        <input type="text" id="name" name="name">
         <label>Choose Pet Color</label>
         <select class="form-control" name="pet-color" id="pet-color">
             <option>--Select--</option>
@@ -13,6 +16,9 @@
                 <option>{{ @colorOption }}</option>
             </repeat>
         </select>
+        <label>Pet Type</label>
+        <input type="text" id="type" name="type"><br>
+        <input type="submit" id="submit" name="submit" value="Order Pet">
     </form>
 </body>
 </html>
